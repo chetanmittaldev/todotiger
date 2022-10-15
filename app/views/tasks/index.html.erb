@@ -1,0 +1,30 @@
+<% if notice.present? %>
+  <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+    <%= notice %>
+  </p>
+<% end %>
+
+<h1 class="font-bold text-2xl">
+  Now - Chetan Mittal Dev
+</h1>
+
+<% unless current_user %>
+  <span><a href="<%= new_user_session_path %>" class="text-blue-600 hover:text-sky-600">[Login]</a></span>
+<% else %>
+  <span><a href="<%= destroy_user_session_path %>" class="text-blue-600 visited:text-purple-600" data-turbo-method="delete">Logout</a></span>
+<% end %>
+
+<% if current_user %>
+  <div class="mt-4">
+    <%= render "form", task: @task %>
+  </div>
+<% else %>
+  <div class="mt-4" />
+<% end %>
+
+<div id="tasks">
+  <h1 class="font-bold text-lg mb-3">Todos</h1>
+  <div class="px-5" data-controller="tasks">
+    <%= render @tasks %>
+  </div>
+</div>

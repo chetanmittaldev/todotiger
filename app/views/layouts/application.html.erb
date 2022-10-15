@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Now - Chetan Mittal Dev</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <main class="container mx-auto p-9">
+      <%= yield %>
+    </main>
+    <footer class="mx-9 mb-9 w-2/3 text-xs">
+      <div>
+        <p>&copy; <a href="https://www.chetanmittaldev.com" target="_blank" class="text-blue-600 hover:text-sky-600">Chetan Mittal</a> <%= Date.today.year %></p>
+        <p class="text-slate-600">Powered by - Rails 7, HotwireJS, TailwindCSS, and PostgreSQL. <br/> Deployed on Fly.io FREE Tier.</p>
+      </div>
+    </footer>
+  </body>
+</html>
