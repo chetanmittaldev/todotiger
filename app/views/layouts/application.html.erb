@@ -12,12 +12,57 @@
   </head>
 
   <body>
-    <main class="container mx-auto p-9">
-      <%= yield %>
-    </main>
-    <footer class="mx-9 mb-9 w-2/3 text-xs">
+
+<header>
+  <nav class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <figure class="flex flex-shrink-0 items-center space-x-1">
+        <img
+          alt="Chetan Mittal - Senior Polyglot Web Developer"
+          class="h-8 w-auto"
+          src="<%= image_path('logo-cmd.jpeg') %>"
+          height="32"
+          width="32"
+        />
+        <figcaption><b>Chetan Mittal</b></figcaption>
+      </figure>
+      <ul class="flex space-x-4">
+        <li>
+          <a href="https://www.chetanmittaldev.com/" class="text-base font-bold underline hover:text-blue-600">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="https://www.chetanmittaldev.com/contact/" class="text-base font-bold underline hover:text-blue-600">
+            Contact
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.chetanmittaldev.com/" class="text-base font-bold underline hover:text-blue-600" target="_blank">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="https://now.chetanmittaldev.com/" class="text-base font-bold" aria-current="page" title="What I am working on now?!!">
+            Now
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <div class="py-10">
+      <main class="container mx-auto">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:py-8 lg:px-8">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+
+    <footer class="mx-auto mb-6 max-w-4xl p-4 sm:px-6 lg:px-8 w-2/3 text-xs">
       <div>
-        <p>&copy; <a href="https://www.chetanmittaldev.com" target="_blank" class="text-blue-600 hover:text-sky-600">Chetan Mittal</a> <%= Date.today.year %></p>
+        <p class="text-slate-600">&copy; <%= Date.today.year %> <a href="https://www.chetanmittaldev.com" target="_blank" class="text-blue-600 hover:text-sky-600">Chetan Mittal</a>. All rights reserved. </p>
         <p class="text-slate-600">Powered by - Rails 7, HotwireJS, TailwindCSS, and PostgreSQL. <br/> Deployed on Fly.io FREE Tier.</p>
       </div>
     </footer>

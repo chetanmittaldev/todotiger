@@ -1,5 +1,5 @@
 <div class="block">
-  <%= form_with(model: task, class:"text-lg inline-block my-3 w-2/3") do |form| %>
+  <%= form_with(model: task, class:"text-lg inline-block my-3") do |form| %>
     <%= form.check_box :completed,
         data: {
           id: task.id,
