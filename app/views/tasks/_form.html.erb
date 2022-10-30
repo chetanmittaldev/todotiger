@@ -1,4 +1,17 @@
 <%= form_with(model: task, class: "mb-7") do |form| %>
+<% if task.errors.any? %>
+  <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2>
+      <%= pluralize(task.errors.count, "error") %>
+      prohibited this task from being saved:
+    </h2>
+    <ul>
+    <% task.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
   <div class="mb-5">
     <%= form.text_field :description, placeholder: "Add new task", class: "inline-block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-2/3" %>
     <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>

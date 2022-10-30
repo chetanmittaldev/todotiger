@@ -81,3 +81,5 @@ gem "devise", "~> 4.8"
 gem "devise-tailwinded", "~> 0.1.5"
 
 gem "pg", "~> 1.4", :group => :production
+
+gem "annotate", "~> 3.2"
